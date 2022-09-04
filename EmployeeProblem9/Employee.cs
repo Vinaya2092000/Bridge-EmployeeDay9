@@ -16,8 +16,10 @@ namespace EmployeeProblem9
             int wagePerHr = 20;
             int empWage = 0;
             int totalWorkingdays = 20;
-            int totalWage = 0;
-            for (int i = 0; i < totalWorkingdays; i++)
+            int totalWorkingHrs = 100;
+            int totalEmpHr = 0;
+            int totalDay = 0;
+            do
             {
                 //new operator creates an object from the class
                 Random random = new Random();
@@ -37,11 +39,14 @@ namespace EmployeeProblem9
                         Console.WriteLine("The Employee is absent");
                         break;
                 }
+                totalEmpHr = totalEmpHr + empHrs;
                 empWage = empHrs * wagePerHr;
-                Console.WriteLine("The Employee wage is " + empWage);
-                totalWage = totalWage + empWage;
-            }
-            Console.WriteLine("Total EmpWage for 20 working days is  "+totalWage);
+                Console.WriteLine("Employee wage is "+empWage);
+                totalDay++;
+            } while (totalEmpHr <= totalWorkingHrs && totalDay < totalWorkingdays);
+            Console.WriteLine("The total working days per month is " +totalWorkingdays+ " and total working hours is "+totalEmpHr);
+            empWage = totalEmpHr * wagePerHr;
+            Console.WriteLine("Employee wage is "+empWage);
         }
     }
 }
