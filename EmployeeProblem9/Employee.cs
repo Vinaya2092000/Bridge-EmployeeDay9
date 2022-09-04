@@ -10,28 +10,28 @@ namespace EmployeeProblem9
     {
         public void Wage()
         {
-            int FULL_TIME = 1;
-            int PART_TIME = 2;
+            const int FULL_TIME = 1;
+            const int PART_TIME = 2;
             int empHrs = 0;
             int wagePerHr = 20;
             int empWage = 0;
             //new operator creates an object from the class
             Random random = new Random();
             int aCheck = random.Next(0, 3);
-            if (aCheck == FULL_TIME)
+            switch (aCheck)
             {
-                empHrs = 8;
-                Console.WriteLine("The Employee is present Full Time");
-            }
-            else if (aCheck == PART_TIME)
-            {
-                empHrs = 4;
-                Console.WriteLine("The Employee is present Part Time");
-            }
-            else
-            {
-                empHrs = 0;
-                Console.WriteLine("The Employee is absent");
+                case FULL_TIME:
+                        empHrs = 8;
+                        Console.WriteLine("The Employee is present Full Time");
+                        break;
+                case PART_TIME:
+                        empHrs = 4;
+                        Console.WriteLine("The Employee is present Part Time");
+                        break;
+                default:
+                        empHrs = 0;
+                        Console.WriteLine("The Employee is absent");
+                        break;
             }
             empWage = empHrs * wagePerHr;
             Console.WriteLine("The Employee wage is "+empWage);
