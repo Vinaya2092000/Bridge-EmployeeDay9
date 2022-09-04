@@ -15,26 +15,33 @@ namespace EmployeeProblem9
             int empHrs = 0;
             int wagePerHr = 20;
             int empWage = 0;
-            //new operator creates an object from the class
-            Random random = new Random();
-            int aCheck = random.Next(0, 3);
-            switch (aCheck)
+            int totalWorkingdays = 20;
+            int totalWage = 0;
+            for (int i = 0; i < totalWorkingdays; i++)
             {
-                case FULL_TIME:
+                //new operator creates an object from the class
+                Random random = new Random();
+                int aCheck = random.Next(0, 3);
+                switch (aCheck)
+                {
+                    case FULL_TIME:
                         empHrs = 8;
                         Console.WriteLine("The Employee is present Full Time");
                         break;
-                case PART_TIME:
+                    case PART_TIME:
                         empHrs = 4;
                         Console.WriteLine("The Employee is present Part Time");
                         break;
-                default:
+                    default:
                         empHrs = 0;
                         Console.WriteLine("The Employee is absent");
                         break;
+                }
+                empWage = empHrs * wagePerHr;
+                Console.WriteLine("The Employee wage is " + empWage);
+                totalWage = totalWage + empWage;
             }
-            empWage = empHrs * wagePerHr;
-            Console.WriteLine("The Employee wage is "+empWage);
+            Console.WriteLine("Total EmpWage for 20 working days is  "+totalWage);
         }
     }
 }
