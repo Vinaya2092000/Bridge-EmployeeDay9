@@ -11,16 +11,22 @@ namespace EmployeeProblem9
         public void Wage()
         {
             int FULL_TIME = 1;
+            int PART_TIME = 2;
             int empHrs = 0;
             int wagePerHr = 20;
             int empWage = 0;
             //new operator creates an object from the class
             Random random = new Random();
-            int aCheck = random.Next(0, 2);
+            int aCheck = random.Next(0, 3);
             if (aCheck == FULL_TIME)
             {
                 empHrs = 8;
-                Console.WriteLine("The Employee is present");
+                Console.WriteLine("The Employee is present Full Time");
+            }
+            else if (aCheck == PART_TIME)
+            {
+                empHrs = 4;
+                Console.WriteLine("The Employee is present Part Time");
             }
             else
             {
