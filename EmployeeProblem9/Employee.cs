@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EmployeeProblem9
 {
-    public class Employee
+    // Already using class 
+    public class Employee  
     {
         public void Wage()
         {
