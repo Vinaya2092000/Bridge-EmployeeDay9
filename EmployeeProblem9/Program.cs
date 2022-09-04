@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee wage computation");
+            Employee employee = new Employee();
+            employee.Wage();
         }
     }
 }
